@@ -21,10 +21,10 @@ from __future__ import print_function
 import collections
 import csv
 import os
-from albert import fine_tuning_utils
-from albert import modeling
-from albert import optimization
-from albert import tokenization
+import fine_tuning_utils
+import modeling
+import optimization
+import tokenization
 import tensorflow.compat.v1 as tf
 from tensorflow.contrib import data as contrib_data
 from tensorflow.contrib import metrics as contrib_metrics
@@ -383,9 +383,9 @@ class QqpProcessor(DataProcessor):
       # guid = "%s-%s" % (set_type, line[0])
       if set_type != "test":
         try:
-          text_a = self.process_text(line[3])
-          text_b = self.process_text(line[4])
-          label = self.process_text(line[5])
+          text_a = self.process_text(line[1])
+          text_b = self.process_text(line[2])
+          label = self.process_text(line[3])
         except IndexError:
           continue
       else:

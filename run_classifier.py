@@ -21,9 +21,9 @@ from __future__ import print_function
 import math
 import os
 import time
-from albert import classifier_utils
-from albert import fine_tuning_utils
-from albert import modeling
+import classifier_utils
+import fine_tuning_utils
+import modeling
 import tensorflow.compat.v1 as tf
 from tensorflow.contrib import cluster_resolver as contrib_cluster_resolver
 from tensorflow.contrib import tpu as contrib_tpu
@@ -89,7 +89,7 @@ flags.DEFINE_bool(
     "do_predict", False,
     "Whether to run the model in inference mode on the test set.")
 
-flags.DEFINE_integer("train_batch_size", 32, "Total batch size for training.")
+flags.DEFINE_integer("train_batch_size", 16, "Total batch size for training.")
 
 flags.DEFINE_integer("eval_batch_size", 8, "Total batch size for eval.")
 
